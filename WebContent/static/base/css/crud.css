@@ -1,0 +1,49 @@
+
+/* 3 - CRUD & COMPOSED */
+/* COMPOSED ENTITY */
+
+/* CRUD MAIN */
+div.class_CRUDMain table.area_0,
+div.class_CRUDMain .field_result {
+	width: 100%;
+}
+
+.class_CRUDMain table.area_centerPanel {
+	width: 100%;
+}
+
+.class_CRUDMain table.area_centerPanelLeft {
+	width: 100%;
+}
+
+.class_CRUDMain input.field_totalItems {
+	width: 50px;
+	margin-left: 3px;
+}
+
+
+div.jqDrag {
+	background-color: #ddeeff;
+	color: #aabbcc;
+}
+
+
+/* SEARCH ENGINE */
+
+.queryOperationAddOperator button>img {
+	background-image: url(../image/add.gif);
+	display: inline;
+}
+
+
+.class_CRUDMain .col_1.area_actions .render_column button{
+	width: 140px;
+}
+
+.class_CRUDMain .render_table td, .render_tableedit td {
+    border-bottom: none;
+    border-collapse: collapse;
+    border-top: none;
+    margin: 0px;
+    padding-left: 6px;
+}

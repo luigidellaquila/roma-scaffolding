@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="no" default-dependency-check="none"
+	default-lazy-init="false">
+
+	<bean autowire="default"
+		class="org.springframework.context.support.ResourceBundleMessageSource"
+		id="messageSource">
+		<property name="basename" value="messages" />
+	</bean>
+
+	<bean autowire="default"
+		class="org.romaframework.scaffolding.CustomApplicationConfiguration" id="ApplicationConfiguration"
+		lazy-init="default">
+		<property name="applicationName">
+			<value>RomaScaffolding</value>
+		</property>
+		<property name="applicationVersion">
+			<value>Ver. 0.1 - build 2014.04.03-01</value>
+		</property>
+		<property name="applicationPackage">
+			<value>org.romaframework.scaffolding</value>
+		</property>
+		<property name="applicationDevelopment">
+			<value>false</value>
+		</property>
+		<property name="configuration">
+			<map />
+		</property>
+	</bean>
+
+	<bean autowire="default" class="org.romaframework.core.aspect.AspectManager"
+		id="AspectManager" lazy-init="default">
+		<property name="defaults">
+			<map>
+				<entry key="i18n" value-ref="I18NAspect" />
+				<entry key="logging" value-ref="LoggingAspect" />
+				<entry key="flow" value-ref="FlowAspect" />
+				<entry key="authentication" value-ref="AuthenticationAspect" />
+				<entry key="validation" value-ref="ValidationAspect" />
+				<entry key="serialization" value-ref="SerializationAspect" />
+				<entry key="hook" value-ref="HookAspect" />
+				<entry key="view" value-ref="ViewAspect" />
+				<entry key="session" value-ref="SessionAspect" />
+				<entry key="data" value-ref="DataBindingAspect" />
+				<entry key="persistence" value-ref="PersistenceAspect" />
+				<entry key="security" value-ref="UsersSecurityAspect" />
+			</map>
+		</property>
+	</bean>
+
+	<bean autowire="default"
+		class="org.romaframework.module.users.install.UsersApplicationInstaller"
+		depends-on="UsersModule" id="ApplicationInstaller" lazy-init="false" >
+	</bean>
+
+</beans>

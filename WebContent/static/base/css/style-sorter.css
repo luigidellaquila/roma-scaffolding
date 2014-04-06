@@ -1,0 +1,43 @@
+table.render_table_content {
+    font-family: 'Trebuchet MS';
+    font-size: 8pt;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.table_selection {
+    width: 20px;
+}
+
+table.render_table_content thead tr .header ,table.render_tableedit_content thead tr .header {
+    background-image: url(../image/bg.gif);
+    background-repeat: no-repeat;
+    background-position: center right;
+    cursor: pointer;
+    padding-right:24px; 
+}
+
+table.render_table_content thead tr .headerSortUp ,table.render_tableedit_content thead tr .headerSortUp {
+    background-image: url(../image/asc.gif);
+}
+
+table.render_table_content thead tr .headerSortDown ,table.render_tableedit_content thead tr .headerSortDown{
+    background-image: url(../image/desc.gif);
+}
+
+table.render_table_content thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp,table.render_tableedit_content thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp  {
+    background-color: #CCCCCC;
+}
+
+table.render_table_content tbody tr.odd td {
+    background-color: #F0F0F6;
+}
+
+/*lbi*/
+table.render_table_content thead tr th, table.render_tableedit_content thead tr th, table.render_tablesorter tfoot tr th {
+    background-color: rgb(224, 238, 244);
+    border: 1px solid #e6e6e6;
+    font-size: 8pt;
+    padding: 2px;
+}

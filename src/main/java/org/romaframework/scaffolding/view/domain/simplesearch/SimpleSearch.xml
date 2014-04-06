@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://www.romaframework.org/xml/roma" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
+	xsd:schemaLocation="http://www.romaframework.org/xml/roma http://www.romaframework.org/schema/v2/roma.xsd">
+	<aspects>
+		<view>
+			<form>
+				<area name="currentValueArea" type="row">
+					<area name="searchArea" type="grid" size="2">
+						<area name="searchFilter" />
+						<area name="currentValue" />
+						<area name="searchResult" />
+					</area>
+					<area name="edit" />
+					<area name="reset" />
+					<area name="search" />
+					<area name="confirm" />
+					<area name="cancel" />
+				</area>
+			</form>
+		</view>
+	</aspects>
+</class>

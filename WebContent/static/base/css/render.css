@@ -1,0 +1,340 @@
+@CHARSET "ISO-8859-1";
+
+/* 2 - RENDERS */ /* ALL INPUT RENDER */
+.render_text input,.render_date input,.render_password input,.render_number input,.render_decimal input,.render_select select,.render_textarea textarea,.render_objectlink input { 
+	padding: 0px;
+	text-align: middle;
+	cursor: text;	
+	width: 150px;
+	margin-left: 4px;
+	margin-right: 2px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+	padding-top:3px;
+	padding-bottom: 3px;
+	border-radius: 3px 3px 3px 3px;
+	border: 1px solid #CCCCCC;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+	display: block; 
+}
+
+.render_text input .invalid,.render_date input .invalid,.render_password input .invalid,.render_number input .invalid,.render_decimal input .invalid,.render_select select .invalid,.render_textarea textarea .invalid,.render_objectlink input .invalid {
+	border: 1px solid #B30222;
+}
+
+/* Client-side invalid input class */
+.csinvalid {
+	border: 1px solid #B30222 !important; outline: none;
+}
+/* Client-side valid input class */
+.csvalid {
+	border: 1px solid #52BC59 !important; outline: none;
+}
+
+button.render_button{	
+	background-color: #F7F9F9;
+    border: 1px solid #CADBDF;
+    color: #333333;
+    cursor: pointer;
+    font-family: Verdana;
+    font-size: 13px;
+    font-weight: normal;
+    padding: 2px;
+} 
+
+/*lbi*/#screen_main_body_OrganizationChartContainer_main_actions,#screen_main_body_PersonInstance_main_actions > tbody > tr > td > button.render_button{
+		position: relative;
+	overflow: visible;
+	display: inline-block;
+	padding: 0.2em 0.7em;
+	border: 1px solid #d4d4d4;
+	margin: 0 0 0 1px;
+	text-decoration: none;
+	/* 	text-shadow: 1px 1px 0 #fff; */
+	font: 11px/normal sans-serif;
+	color: #333;
+	white-space: nowrap;
+	cursor: pointer;
+	outline: none;
+	background-color: #ececec;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4),
+		to(#ececec) );
+	background-image: -moz-linear-gradient(#f4f4f4, #ececec);
+	background-image: -o-linear-gradient(#f4f4f4, #ececec);
+	background-image: linear-gradient(#f4f4f4, #ececec);
+	-webkit-background-clip: padding;
+	-moz-background-clip: padding;
+	-o-background-clip: padding-box;
+	/*background-clip: padding-box;*/
+	/* commented out due to Opera 11.10 bug */
+	-webkit-border-radius: 0.2em;
+	-moz-border-radius: 0.2em;
+	border-radius: 0.2em;
+	/* IE hacks */
+	zoom: 1;
+	*display: inline;
+	vertical-align: top;
+}
+/*lbi*/
+#screen_main_body_PersonalDataMain_0_bottoni > tbody > tr > td > div > button.render_button{
+		position: relative;
+	overflow: visible;
+	display: inline-block;
+	padding: 0.2em 0.7em;
+	border: 1px solid #d4d4d4;
+	margin: 0 0 0 1px;
+	text-decoration: none;
+	/* 	text-shadow: 1px 1px 0 #fff; */
+	font: 11px/normal sans-serif;
+	color: #333;
+	white-space: nowrap;
+	cursor: pointer;
+	outline: none;
+	background-color: #ececec;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4),
+		to(#ececec) );
+	background-image: -moz-linear-gradient(#f4f4f4, #ececec);
+	background-image: -o-linear-gradient(#f4f4f4, #ececec);
+	background-image: linear-gradient(#f4f4f4, #ececec);
+	-webkit-background-clip: padding;
+	-moz-background-clip: padding;
+	-o-background-clip: padding-box;
+	/*background-clip: padding-box;*/
+	/* commented out due to Opera 11.10 bug */
+	-webkit-border-radius: 0.2em;
+	-moz-border-radius: 0.2em;
+	border-radius: 0.2em;
+	/* IE hacks */
+	zoom: 1;
+	*display: inline;
+	vertical-align: top;
+}
+/*lbi*/
+#screen_main_body_PersonalDataMain_filter_mainArea_simpleArea > tbody > tr > td > table > tbody > tr > td > button.render_button{
+			position: relative;
+	overflow: visible;
+	display: inline-block;
+	padding: 0.2em 0.7em;
+	border: 1px solid #d4d4d4;
+	margin: 0 0 0 1px;
+	text-decoration: none;
+	/* 	text-shadow: 1px 1px 0 #fff; */
+	font: 11px/normal sans-serif;
+	color: #333;
+	white-space: nowrap;
+	cursor: pointer;
+	outline: none;
+	background-color: #ececec;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f4f4),
+		to(#ececec) );
+	background-image: -moz-linear-gradient(#f4f4f4, #ececec);
+	background-image: -o-linear-gradient(#f4f4f4, #ececec);
+	background-image: linear-gradient(#f4f4f4, #ececec);
+	-webkit-background-clip: padding;
+	-moz-background-clip: padding;
+	-o-background-clip: padding-box;
+	/*background-clip: padding-box;*/
+	/* commented out due to Opera 11.10 bug */
+	-webkit-border-radius: 0.2em;
+	-moz-border-radius: 0.2em;
+	border-radius: 0.2em;
+	/* IE hacks */
+	zoom: 1;
+	*display: inline;
+	vertical-align: top;
+	}
+
+#screen_main_body_HomePage_notebook_main_noteHeader > tbody > tr > td > div > button.render_button {
+	border:none;
+}
+
+table.render_grid,table.render_column,table.render_form, .render_grid > tr >td,.render_row > tr >td,.render_column > tr >td,.render_form > tr >td ,table.render_rowset{
+	width: 100%;
+	height: auto;
+	padding: 0;
+	margin: 0;
+}
+
+img.render_button_icon {
+	vertical-align: middle;
+	background-repeat: no-repeat;
+	display: none;
+}
+
+div.render_table ,div.render_tableedit {
+	display: table;
+}
+
+.render_table >div,.render_tableedit >div{
+	display: table-row;
+}
+
+.render_table >div>div,.render_tableedit >div>div{
+	display: table-cell;
+	vertical-align: top;
+}
+table.render_table, table.render_tableedit {
+	width: 100%;
+	border-spacing: 0;
+	border-collapse: collapse;
+	border: 1px solid #DDDDDD;
+}
+
+.render_table th,.render_tableedit th {
+	background-color: #dddddd;
+	border-top: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+}
+
+.render_table td,.render_tableedit td {
+	border-top: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+	border-collapse: collapse;
+}
+
+.render_table >tr:HOVER >td,.render_tableedit >tr:HOVER >td {
+	background-color: #F5F5F5;
+}
+
+.render_table >tr.odd:HOVER >td,.render_tableedit >tr.odd:HOVER >td {
+	background-color: #F5F5F5;
+}
+
+.render_table tr.odd td,.render_tableedit tr.odd td {
+	background-color: #F9F9F9;
+}
+
+/* RENDER_TABLE */
+button.table_actions_add,button.table_actions_edit,button.table_actions_view,button.table_actions_remove,button.table_actions_up,button.table_actions_down
+{
+	display: block;
+	margin: 2px;
+	width: 24px;
+	height: 24px;
+	background-repeat: no-repeat;
+	background-position: center; 
+}
+
+button.table_actions_add {
+	background-image: url(../image/add.gif);
+}
+
+button.table_actions_edit {
+	background-image: url(../image/edit.gif);
+}
+
+button.table_actions_view {
+	background-image: url(../image/view.gif);
+}
+
+button.table_actions_remove {
+	background-image: url(../image/remove.gif);
+}
+
+button.table_actions_up {
+	background-image: url(../image/up.gif);
+}
+
+button.table_actions_down {
+	background-image: url(../image/down.gif);
+}
+
+/* ALL ACTION RENDER */
+.render_link {
+	color: #333;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.render_link a:HOVER {
+	text-decoration: underline;
+}
+
+.render_link a:VISITED {
+	color: #333;
+}
+
+.render_link a {
+	background-repeat: no-repeat;
+	line-height: 25px;
+	display: block;
+}
+
+/* RENDER BUTTON */
+.render_button {
+	cursor: hand;
+}
+
+/* RENDER GRID */
+.render_grid {
+	width: 100%;
+}
+
+/* RENDER ROW */
+.render_row { /*margin-right: 10px;*/
+	padding: 0;
+	border-collapse: collapse;
+}
+
+/* RENDER ROWSET */
+.render_rowset_td {
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #CCC;
+}
+
+.render_rowset_td {
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #CCC;
+}
+
+/* RENDER TEXTAREA */
+.render_textarea_label {
+	vertical-align: middle;
+}
+
+/* RENDER LIST */
+td.render_list_box {
+	border: 1px solid #f4f4f4;
+	width: 240px;
+}
+
+select.render_list_content {
+	height: 160px;
+	width: 250px;
+}
+
+/* RENDER DATE */
+
+/* RENDER OBJECTLINK */
+input.render_objectlink_open,input.render_objectlink_reset {
+	width: 15px;
+	background-repeat: no-repeat;
+	background-position: 0 3px;
+	background-color: transparent;
+	border: none;
+}
+
+.render_objectlink_open {
+	background-image: url(../image/view.gif);
+}
+
+.render_objectlink_reset {
+	background-image: url(../image/reset.gif);
+}
+
+input.table_selection {
+	cursor: pointer;
+}
+
+/* RENDER CHECK */
+input.render_check {
+	cursor: pointer;
+	display: block;
+	margin: 0 auto;
+}
+
+/* RENDER UPLOAD */
+div.render_upload iframe {
+	display: none;
+}

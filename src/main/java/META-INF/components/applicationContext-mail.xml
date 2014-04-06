@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="no" default-dependency-check="none"
+	default-lazy-init="false">
+
+	<bean id="PlainMail" class="org.romaframework.module.mail.javamail.PlainMail"
+		singleton="true">
+	</bean>
+
+	<bean id="HtmlMail" class="org.romaframework.module.mail.javamail.HtmlMail"
+		singleton="true">
+	</bean>
+
+	<bean id="ServerConfiguration"
+		class="org.romaframework.module.mail.javamail.ServerConfiguration"
+		singleton="true">
+		<property name="smtp" value="your.smtp.org" />
+		<property name="pop3" value="your.pop3.org" />
+		<property name="debug" value="true" />
+		<property name="authentications">
+			<map>
+				<entry>
+					<key>
+						<value>default</value>
+					</key>
+					<ref bean="DefaultAuthentication" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="DefaultAuthentication"
+		class="org.romaframework.scaffolding.mail.EmailAuthentication"
+		singleton="true">
+		<property name="senderAddress" value="your@address.com" />
+		<property name="userid" value="your@address.com" />
+		<property name="password" value="yourPw" />
+	</bean>
+</beans>

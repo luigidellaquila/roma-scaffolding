@@ -1,0 +1,241 @@
+/* Application Style */
+
+/***************************************** GENERIC STYLE BEGINS HERE *****************************************/
+html,body {
+	margin: 0;
+	padding: 0;
+	background-color: lightgray;
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+	font-size: small;
+}
+
+input {
+	font-size: 11px;
+}
+
+img {
+	display: inline;
+}
+
+button img {
+	margin-right: 0.3em;
+}
+
+#screen_main,#screen_main_header {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	padding: 0;
+	background-color: lightgrey;
+}
+
+#screen_main_body {
+	margin: auto;
+}
+
+/****** BUTTONS ******/
+button.action_report:hover,button.action_add:hover,button.action_showEventProfilePage:hover,button.action_showDashboardProfilePage:hover,button.action_showHeaderMenuProfilePage:hover,button.action_newWizard:hover,.action_configurateSteps:hover,button.action_save:hover,button.action_cancel:hover,button.action_reset:hover,button.action_no:hover,button.action_yes:hover,button.action_selectElement:hover,button.action_unselectElement:hover,button.action_moveUp:hover,button.action_moveDown:hover,button.action_ok:hover,button.action_prev:hover,button.action_next:hover,button.action_addFilter:hover,button.action_delete:hover,button.action_update:hover,button.action_selectAll:hover,button.action_deselectAll:hover,button.action_last:hover,button.action_first:hover,button.action_queryAll:hover
+	{ /*width: 100%;*/
+	max-width: 180px;
+	background-color: #E6E6E6;
+	border-color: #CCCCCC #CCCCCC #BBBBBB;
+	border-radius: 4px 4px 4px 4px;
+	border-style: solid;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e6e6e6),
+		color-stop(25%, #e6e6e6), to(#ffffff) );
+	background-image: -webkit-linear-gradient(#e6e6e6, #e6e6e6 25%, #ffffff);
+	background-image: -moz-linear-gradient(top, #e6e6e6, #e6e6e6 25%, #ffffff);
+	background-image: -ms-linear-gradient(#e6e6e6, #e6e6e6 25%, #ffffff);
+	background-image: -o-linear-gradient(#e6e6e6, #e6e6e6 25%, #ffffff);
+	background-image: linear-gradient(#e6e6e6, #e6e6e6 25%, #ffffff);
+	border-width: 1px;
+}
+
+button img {
+	width: 16px !important;
+	height: 16px;
+}
+
+button.action_selectAll,button.action_deselectAll,button.action_last,button.action_first,button.action_queryAll
+	{
+	min-width: inherit;
+}
+
+.area_elementsArea select {
+	padding: 3px;
+	border-radius: 8px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+/***************************************** GENERIC STYLE ENDS HERE *****************************************/
+
+/***************************************** SIMPLE SEARCH STYLE *****************************************/
+.className_SimpleSearch .edit button.edit {
+	background-color: transparent;
+	background-image: url(../image/lookup.gif);
+	border: medium none;
+	padding-left: 18px;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 20px;
+	height: 20px;
+	width: 20px;
+}
+
+.className_SimpleSearch .reset button {
+	background-color: transparent;
+	background-image: url(../image/reset.gif);
+	border: medium none;
+	padding-left: 18px;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 20px;
+	width: 20px;
+}
+
+.className_SimpleSearch input.elementName_searchFilter {
+	width: 300px;
+	border: solid 1px;
+	border-color: rgb(100, 100, 100);
+}
+
+.className_SimpleSearch input.elementName_currentValue {
+	width: 300px;
+}
+
+.className_SimpleSearch select {
+	width: 300px;
+	position: absolute;
+}
+
+.className_SimpleSearch .search button {
+	background-color: transparent;
+	border: medium none;
+	padding-left: 18px;
+	background-image: url(../image/search.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 20px;
+	height: 20px;
+}
+
+.className_SimpleSearch .add button {
+	background-color: transparent;
+	border: medium none;
+	padding-left: 18px;
+	background-image: url(../image/add.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 20px;
+	height: 20px;
+}
+
+.className_SimpleSearch .confirm button {
+	background-color: transparent;
+	border: medium none;
+	padding-left: 18px;
+	background-image: url(../image/ok.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 20px;
+	height: 20px;
+}
+
+.className_SimpleSearch .cancel button {
+	background-color: transparent;
+	border: medium none;
+	padding-left: 18px;
+	background-image: url(../image/remove.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 20px;
+	height: 20px;
+}
+
+div.class_SelectWrapper div {
+	padding-left: 1px;
+}
+
+div.class_SelectWrapper div *,div.class_EnumWrapper * {
+	padding-left: 0px;
+	margin-left: 0px;
+}
+
+.area_homePageRight {
+	vertical-align: top;
+}
+
+/* POPUP */
+.screen_popup {
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+	font-size: small;
+}
+
+.screen_popup img {
+	width: 60px;
+}
+
+.class_PagingTableEdit input.field_totalItems,.class_PagingTableEdit input.field_currentPage,.class_PagingTableEdit input.field_totalPages
+	{
+	width: 40px;
+}
+
+.class_AmministrazionePanel button {
+	width: 350px;
+	text-align: left;
+}
+
+.class_AmministrazionePanel button img {
+	display: inline;
+}
+
+.class_AmministrazionePanel button.action_configurazioneLdap img {
+	background-image: url(../image/login.gif)
+}
+
+.class_AmministrazionePanel button.action_esportaAnagrafica img,.class_AmministrazionePanel button.action_esportaAnagraficaStorica img,.class_AmministrazionePanel button.action_esportaLookup img,.class_AmministrazionePanel button.action_esportaOrganizzazione img,.class_AmministrazionePanel button.action_esportazioneExcentive img
+	{
+	background-image: url(../image/selectall.gif)
+}
+
+.class_AmministrazionePanel button.action_eliminaPermanentementeUnaPersona img
+	{
+	background-image: url(../image/remove.gif)
+}
+
+.class_AmministrazionePanel button.action_importaDaADP img {
+	background-image: url(../image/add.gif)
+}
+
+.class_AmministrazionePanel button.action_bacheca img {
+	background-image: url(../image/messenger.png)
+}
+
+.class_AmministrazionePanel button.action_schedulerCdc img {
+	background-image: url(../image/search.gif)
+}
+
+.class_AmministrazionePanel button.action_reportisticaDinamica img {
+	background-image: url(../image/wizard.gif)
+}
+
+.class_HrCommunicationInstance .field_title input {
+	width: 800px;
+}
+
+.class_HrCommunicationInstance .field_text textarea {
+	width: 800px;
+	height: 150px;
+}
+
+.class_BaseProfileConfigPanel div.field_profile {
+	width: 90%;
+	background-color: #E0EEF4;
+	border: 1px solid #E6E6E6;
+	padding-left: 15px;
+}
+
+.class_BaseProfileConfigPanel .class_ProfilingCell div.field_label {
+	width: 200px;
+}

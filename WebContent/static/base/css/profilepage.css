@@ -1,0 +1,9 @@
+/***************************************** PROFILE PAGE STYLE BEGINS HERE *****************************************/
+.tableheader {
+	text-transform: capitalize;
+}
+
+.field_visible {
+	text-align: center;
+}
+/***************************************** PROFILE PAGE STYLE ENDS HERE *****************************************/

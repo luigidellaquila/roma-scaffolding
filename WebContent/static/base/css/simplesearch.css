@@ -1,0 +1,114 @@
+.class_SimpleSearch button.action_edit > img,
+.class_SimpleSearch button.action_search > img,
+.class_SimpleSearch .action_cancel img.render_button_icon {
+    background-image: none;
+    display: inline;
+}
+
+.class_SimpleSearch button.action_edit {
+	background-color: transparent;
+	background-image: url(../image/lookup.gif);
+	border: medium none;
+	padding-left: 18px;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 20px;
+	width: 20px;
+	min-width: 20px;
+	max-width: 20px;
+}
+
+.class_SimpleSearch  button.action_reset {
+	background-color: transparent;
+	background-image: url(../image/reset.gif);
+	border: medium none;
+	padding-left: 18px;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 20px;
+	width: 20px;
+	min-width: 20px;
+	max-width: 20px;
+}
+
+.class_SimpleSearch input.elementName_searchFilter {
+	width: 300px;
+	border: solid 1px;
+	border-color: rgb(100, 100, 100);
+}
+
+.class_SimpleSearch input.elementName_currentValue {
+	width: 300px;
+}
+
+.class_SimpleSearch select {
+	width: 250px;
+	position: absolute;
+}
+
+.class_SimpleSearch button.action_search {
+	background-color: transparent;
+	border: medium none;
+	padding-left: 18px;
+	background-image: url(../image/search.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 20px;
+	height: 20px;
+	min-width: 20px;
+	max-width: 20px;
+}
+
+.class_SimpleSearch button.action_add  {
+	background-color: transparent;
+	border: medium none;
+	padding-left: 18px;
+	background-image: url(../image/add.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 20px;
+	min-width: 20px;
+	max-width: 20px;
+	height: 20px;
+}
+
+.class_SimpleSearch button.action_confirm {
+	background-color: transparent;
+	border: medium none;
+	padding-left: 18px;
+	background-image: url(../image/yes.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 20px;
+	min-width: 20px;
+	max-width: 20px;
+	height: 20px;
+}
+
+.class_SimpleSearch button.action_cancel {
+	background-color: transparent;
+	border: medium none;
+	padding-left: 18px;
+	background-image: url(../image/remove.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 20px;
+	min-width: 20px;
+	max-width: 20px;
+	height: 20px;
+}
+
+.class_SimpleSearch80 input.elementName_searchFilter {
+	width: 150px;
+	border: solid 1px;
+	border-color: rgb(100, 100, 100);
+}
+
+.class_SimpleSearch80 input.elementName_currentValue {
+	width: 150px;
+}
+
+.class_SimpleSearch80 select {
+	width: 150px;
+	position: absolute;
+}

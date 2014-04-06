@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<project xmlns:ivy="antlib:org.apache.ivy.ant" basedir="." default="persistence-compile" name="roma">
+	<property environment="env" />
+	<property name="project.src" value="src" />
+	<property name="project.web" value="WebContent" />
+	<property name="project.lib" value="lib" />
+	<property name="project.tmp" value="dist/temp" />
+
+	<property name="project.weblib" value="${project.web}/WEB-INF/lib" />
+	<property name="project.build" value="${project.web}/WEB-INF/classes" />
+	
+	<property name="project.debug" value="on" />
+	<property name="project.debuglevel" value="source,lines,vars" />
+	<property name="project.targetComp" value="1.6" />
+	<property name="project.dist" value="dist" />
+
+	<property name="ivy.install.version" value="2.2.0" />
+	<property name="ivy.jar.file" value="${project.lib}/ivy.jar" />
+
+	<property name="junit.output.dir" value="junit" />
+	<property name="junit.classpath.dir" value="junit/bin" />
+	<property name="project.test.src" value="test/java" />
+	<property name="reports.tests" value="${junit.output.dir}/reports" />
+
+	<path id="junit.classpath">
+		<pathelement location="${project.build}" />
+		<!-- All compiled class should be under this folder -->
+		<pathelement location="${project.weblib}/junit-4.11.jar" />
+		<fileset dir="${project.lib}" includes="**/*.jar" />
+		<fileset dir="${project.weblib}" includes="**/*.jar" />
+	</path>
+
+	<path id="drivers.classpath">
+		<fileset dir="${project.lib}" includes="**/*.jar" />
+	</path>
+
+	<path id="project.classpath">
+		<fileset dir="${project.lib}" includes="**/*.jar" />
+		<fileset dir="${project.weblib}" includes="**/*.jar" />
+	</path>
+
+	<path id="project.enhancement.classpath">
+		<pathelement location="${project.dist}/tempjar" />
+		<fileset dir="${project.lib}" includes="**/*.jar" />
+		<fileset dir="${project.weblib}" includes="**/*.jar" />
+		<!-- <fileset dir="${siassb.lib.runtime}" includes="**/*.jar"/> -->
+	</path>
+
+
+
+	<target name="clean">
+		<delete dir="${project.build}" />
+	</target>
+
+	<target name="clean-dist">
+		<delete dir="${project.dist}" />
+	</target>
+
+	<target description="--&gt; clean the ivy installation" name="clean-ivy">
+		<delete file="${ivy.jar.file}" />
+	</target>
+
+	<target description="--&gt; clean the ivy installation" name="clean-dependencies">
+		<delete file="${project.weblib}" />
+	</target>
+
+	<target depends="clean,clean-ivy,clean-dist,clean-dependencies" name="clean-all">
+	</target>
+
+	<target name="download-ivy" unless="ivy.download.skip">
+		<mkdir dir="${project.lib}" />
+		<echo message="installing ivy..." />
+		<get dest="${ivy.jar.file}" src="http://repo1.maven.org/maven2/org/apache/ivy/ivy/${ivy.install.version}/ivy-${ivy.install.version}.jar" usetimestamp="true" />
+	</target>
+
+	<target name="install-ivy">
+		<available file="${ivy.jar.file}" property="ivy.download.skip" />
+		<antcall target="download-ivy" />
+		<path id="ivy.lib.path">
+			<fileset dir="${project.lib}" includes="*.jar" />
+		</path>
+		<taskdef classpathref="ivy.lib.path" resource="org/apache/ivy/ant/antlib.xml" uri="antlib:org.apache.ivy.ant" />
+	</target>
+
+	<target depends="install-ivy" name="retrieve-dependencies" unless="ivy.resolve.skip">
+		<echo>Retrieving libs</echo>
+		<mkdir dir="${project.weblib}" />
+		<ivy:retrieve pattern="${project.weblib}/[artifact].[ext]" />
+	</target>
+
+	<target name="compile" >
+		<available file="${ivy.jar.file}" property="ivy.resolve.skip" />
+	
+		<antcall target="install-ivy" />
+		<!--<ivy:cachepath pathid="project.classpath" conf="default"  />-->
+
+		<mkdir dir="${project.build}" />
+
+		<copy toDir="${project.build}">
+			<fileset dir="${project.src}">
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	
+		<javac debug="${project.debug}" debuglevel="source,lines,vars" destdir="${project.build}" source="${project.targetComp}" target="${project.targetComp}">
+			<src path="${project.src}" />
+			
+			<classpath>
+				<path refid="project.classpath" />
+			</classpath>
+		</javac>
+
+	</target>
+
+	<target name="dist" depends="persistence-compile">
+
+		<mkdir dir="${project.dist}" />
+		<delete file="${project.dist}/${ant.project.name}.war" />
+
+		<war compress="true" destfile="${project.dist}/${ant.project.name}.war" webxml="${project.web}/WEB-INF/web.xml">
+			<fileset dir="${project.web}">
+				<include name="**/*">
+				</include>
+				<exclude name="**/*Test.class"/>
+			</fileset>
+		</war>
+	</target>
+
+
+
+
+	<target name="persistence-compile">
+		<!--<ivy:cachepath pathid="project.classpath" conf="default"  />-->
+		<path id="project.enhancement.classpath">
+			<pathelement location="${project.build}" />
+			<path refid="project.classpath">
+			</path>
+		</path>
+		<taskdef classname="org.datanucleus.enhancer.tools.EnhancerTask" classpathref="project.enhancement.classpath" name="datanucleusenhancer" />
+		<datanucleusenhancer classpathref="project.enhancement.classpath" dir="${project.build}" failonerror="true" verbose="true" detachListener="true">
+			<jvmarg line="-Dlog4j.configuration=file:src/main/java/datanucleus-log4j.properties" />
+		</datanucleusenhancer>
+	</target>
+
+
+	
+	
+	<target depends="persistence-compile" name="persistence-synch-schema">
+	<!--configured to work with Oracle -->
+		<path id="project.enhancement.classpath">
+			<pathelement location="${project.build}" />
+			<fileset dir="${project.lib}" includes="**/*.jar" />
+			<fileset dir="${project.weblib}" includes="**/*.jar" />
+		</path>
+		<!--
+		<path id="project.enhancement.classpath">
+			<pathelement location="${project.build}" />
+			<path refid="project.classpath"></path>
+			<path refid="drivers.classpath"></path>
+		</path>
+		-->
+		<taskdef classname="org.datanucleus.store.schema.SchemaToolTask" classpathref="project.enhancement.classpath" name="schematool">
+		</taskdef>
+		<schematool failonerror="true" mode="create" verbose="true" ddlfile="schema.sql">
+			<jvmarg line="-Dlog4j.configuration=file:src/main/java/datanucleus-log4j.properties" />
+			<classpath>
+				<path refid="project.enhancement.classpath">
+				</path>
+			</classpath>
+			<fileset dir="${project.build}">
+				<include name="**/*.jdo">
+				</include>
+			</fileset>
+
+			<sysproperty key="datanucleus.ConnectionDriverName" value="oracle.jdbc.driver.OracleDriver" />
+			<sysproperty key="datanucleus.ConnectionURL" value="jdbc:oracle:thin:@192.168.56.101:1521:XE" />
+			<sysproperty key="datanucleus.ConnectionUserName" value="user" />
+			<sysproperty key="datanucleus.ConnectionPassword" value="pw" />
+
+
+		</schematool>
+	</target>
+
+
+	<target name="persistence-compile-roma">
+		<taskdef classname="org.datanucleus.enhancer.tools.EnhancerTask" classpathref="project.classpath" name="datanucleusenhancer" />
+		<taskdef classname="net.sf.antcontrib.logic.ForTask" classpathref="project.classpath" name="for" />
+		<mkdir dir="${project.dist}/tempjar" />
+		<for param="file">
+			<path>
+				<fileset dir="${project.web}">
+					<include name="**/roma-users.jar" />
+				</fileset>
+			</path>
+			<sequential>
+				<delete>
+					<fileset dir="${project.dist}/tempjar" includes="**/*" />
+				</delete>
+				<unzip dest="${project.dist}/tempjar" src="@{file}" />
+				<delete file="@{file}" />
+				<datanucleusenhancer detachlistener="true" classpathref="project.enhancement.classpath" dir="${project.dist}/tempjar" failonerror="true" verbose="true">
+					<jvmarg line="-Dlog4j.configuration=file:src/main/java/datanucleus-log4j.properties" />
+				</datanucleusenhancer>
+				<zip destfile="@{file}">
+					<fileset dir="${project.dist}/tempjar">
+						<include name="**/*" />
+					</fileset>
+				</zip>
+			</sequential>
+		</for>
+
+		<delete dir="${project.dist}/tempjar" />
+	</target>
+
+	
+	<!-- Target: Run JUnit test classes. -->
+	<target name="test">		
+		<junit fork="yes" printsummary="on">
+
+			<formatter type="plain"  usefile="false" />
+
+			<batchtest fork="no" >
+				<fileset dir="${project.test.src}">
+					<include name="**/*Test*.java"/>
+				</fileset>
+			</batchtest>
+			<classpath refid="junit.classpath" />
+			
+		</junit>
+	</target>
+
+</project>

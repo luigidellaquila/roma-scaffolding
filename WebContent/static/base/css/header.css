@@ -1,0 +1,189 @@
+/***************************************** HEADER STYLE BEGINS HERE *****************************************/
+
+/* Don't touch or i'll cut your hands XD */
+
+
+#screen_main_0{border-collapse:collapse; padding:0 !important; margin:0;}
+
+.class_HeaderMainPage{
+	background-color: rgb(100, 100, 120);
+}
+
+.class_HeaderMainPage .action_home button {
+	padding-left: 0px;
+	border: none;
+}
+
+.class_HeaderMainPage .action_changePassword button {
+	padding-left: 0px;
+	border: none;
+}
+
+.class_HeaderMainPage .action_controlPanel button {
+	padding-left: 0px;
+	border: none;
+}
+
+#logoutHeader{
+    float: right;
+    margin-right: 6px;
+    margin-top: 4px;
+}
+
+.topbanner {
+	display: none;
+}
+
+.class_HeaderMainPage {
+	border: none;
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+}
+
+/* Magic, don't touch */
+.class_HeaderMenuElement {
+	float: left;
+	transition: background 1s;
+	-moz-transition: background 1s; /* Firefox 4 */
+	-webkit-transition: background 1s; /* Safari and Chrome */
+	-o-transition: background 1s; /* Opera */
+}
+
+.class_HeaderMainPage .menuActionSelected {
+	background: transparent url('../image/bluebgactive.png') no-repeat center top;
+	display: block;
+}
+
+#header {
+	color: #EEE;
+	/*padding-left:33px;*/
+	/*margin: 4px 0;*/
+	display: inline;
+	vertical-align: middle;
+}
+
+#header a {
+	color: #FFF;
+	text-decoration: none;
+}
+
+#header h4 {
+	height: 0.4em;
+}
+
+#headermenu {
+	float: left;
+	/* 	padding: 0.6em; */
+}
+
+#userinfo {
+	float: right;
+	text-align: right;
+	padding: 0.6em;
+	margin-right: 6px;
+}
+
+#userinfo>div>img {
+	vertical-align: middle;
+}
+
+.class_HeaderMenuElement img.render_button_icon {
+	display: none;
+}
+
+.class_DashboardMenuElement img.render_button_icon {
+	display: none;
+}
+
+.class_DashboardMenuElement button.render_button {
+	width: 80px;
+}
+
+.usertab {
+	padding: 0.9em;
+	margin-right: 0.9em;
+}
+
+.usertab:hover {
+	background-color: #5C5758;
+}
+
+#logout {
+	margin-left: 0.9em;
+	padding-right: 0.9em;
+}
+
+#screen_main_header_HeaderMainPage_changePassword_content {
+	text-decoration: none;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+}
+
+li {
+	display: inline;
+	margin-right: 0.5em;
+}
+
+li:hover {
+	
+}
+
+.hidden {
+	height: 0;
+	overflow: hidden;
+	position: relative;
+	display: none;
+}
+
+.imm {
+	text-align: right;
+}
+
+div#menuContent {
+	text-align: left;
+	margin-right: 1.0em;
+	position: relative;
+	float: left;
+}
+
+div#menuImage {
+	position: relative;
+	float: right;
+}
+
+.class_HeaderMainPage td {
+	padding: 0;
+}
+
+#userinfo {
+	margin: 0;
+	padding: 0;
+	padding-right: 9px;
+}
+
+.class_MenuElementContainer .render_pojo {
+	display: inline-block;
+	height: 43px;
+}
+
+.class_MenuElementContainer a.action_action {
+	display: block;
+	margin: 0.35em 1em auto 1em;
+}
+
+#userinfo,.userinfo_area {
+	height: 33px;
+}
+
+.userinfo_area {
+	margin-top: 0.35em;
+	margin-right: 1em;
+}
+
+
+
+/***************************************** HEADER STYLE ENDS HERE *****************************************/

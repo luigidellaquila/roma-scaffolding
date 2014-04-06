@@ -1,0 +1,40 @@
+@CHARSET "ISO-8859-1";
+
+/* Screens */
+
+td.screen_header {
+	padding:0;
+}
+
+.rootElement{
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+#screen_main {
+    margin: 0 auto;
+    height: 100%;
+}
+
+td.screen_body {
+	height: 100%;
+	vertical-align: top;
+}
+
+table.screen_body >tbody>tr>td {
+	vertical-align: top;
+}
+
+
+#screen_main_body {
+    margin: 0 auto;
+    padding: 0px 0px;
+    background-color: white;
+    box-shadow:2px 2px 2px 2px #a0a0a0; 
+    height: 100%;
+}
+
+#screen_main_footer {
+    padding-top: 20px;
+}
