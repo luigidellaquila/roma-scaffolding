@@ -4,15 +4,9 @@
 	<aspects>
 		<view>
 			<form>
-				<area name="main" type="row" >
-					<area name="actions" type="grid" size="3">
-						<area name="chooseCustomerIcon" />
-						<area name="manageCustomersIcon" />
-						<area name="logoutIcon" />
-						<area name="chooseCustomer" />
-						<area name="manageCustomers" />
-						<area name="logout" />
-					</area>
+				<area name="main" type="row">
+					<area name="fields" type="form" size="3" />
+					<area name="actions" type="row" />
 				</area>
 			</form>
 		</view>
